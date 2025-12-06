@@ -1,198 +1,99 @@
-🐙 GitHub Issue Assistant — AI-Powered Issue Analysis 🔍🤖
-🚀 Overview
+# Disaster Prediction using ML 🌍🔍
 
-The GitHub Issue Assistant is an intelligent tool that analyzes issues from any GitHub repository using AI (Gemini / OpenAI), and generates a structured JSON report with:
+## Overview
+This project aims to predict natural disasters such as **earthquakes, floods, and forest fires** using **Machine Learning**. It features a **clean and intuitive UI** built with **React.js & Tailwind CSS**, while the backend is powered by **Flask** for efficient data processing and predictions.
 
-🎯 Issue summary
+## Features
+- 📊 **Predicts earthquakes, floods, and forest fires** based on historical data.
+- 🛠️ **Machine Learning models** trained using various datasets.
+- 🌐 **Interactive web application** with an intuitive UI.
+- 🔥 **Built with React.js, Tailwind CSS (Frontend) & Flask (Backend).**
 
-🏷️ Relevant labels
+---
 
-📌 Issue type
+## Tech Stack
+- **Frontend**: React.js, Tailwind CSS
+- **Backend**: Flask, Python
+- **ML Libraries**: Pandas, NumPy, Scikit-Learn
+- **Data Visualization**: Matplotlib, Seaborn
 
-🧠 Priority score
+---
 
-⚠️ Potential impact
+## Dataset & Preprocessing
+The dataset is collected from multiple sources, containing data on past disasters. The preprocessing steps include:
+1. **Exploratory Data Analysis (EDA)**
+   - Handling missing values
+   - Feature engineering
+   - Data visualization
+2. **Data Cleaning & Transformation**
+   - Normalization & scaling
+   - Encoding categorical variables
+3. **Model Training & Evaluation**
+   - Splitting dataset into training & testing
+   - Training ML models (Logistic Regression, Random Forest, Neural Networks, etc.)
+   - Evaluating model performance using accuracy, precision, recall, and F1-score
 
-It helps developers, maintainers, and open-source contributors quickly triage issues and understand their importance.
+---
 
-The project combines:
+## Model Integration
+Once the model is trained and tested, it is integrated into a Flask API to serve predictions to the web application.
+- The **Flask API** receives input data, processes it, and returns predictions.
+- The **React.js frontend** consumes the API and displays the results in an interactive manner.
 
-💻 FastAPI backend
+---
 
-🧠 LLM for intelligent analysis
+## Installation & Setup
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Abhishek142004/Disaster-Prediction-ML-Project.git
+cd Disaster-Prediction-ML-Project
+```
 
-🌐 Frontend (HTML + CSS + JS) for clean UX
-
-🎨 Features
-
-🔗 Analyze any GitHub issue using repo URL + issue number
-
-🧠 AI-powered analysis using LLM (Gemini/OpenAI)
-
-📊 Structured JSON output
-
-🏷️ Label suggestions
-
-⚠️ Impact estimation
-
-💡 User-friendly frontend
-
-🌍 REST API for integration
-
-🛠️ Tech Stack
-🖥️ Frontend
-
-HTML5
-
-CSS3 (Tailwind optional)
-
-JavaScript
-
-⚙ Backend
-
-FastAPI (Python)
-
-Pydantic data models
-
-🤖 AI / ML
-
-Google Gemini / OpenAI GPT
-
-Prompt Engineering
-
-🔗 External APIs
-
-GitHub REST API
-
-📂 Project Structure
-GitHubProject/
-│
-├─ main.py               # FastAPI
-├─ github_client.py      # GitHub fetch logic
-├─ llm_client.py         # AI logic
-├─ models.py             # Request/response schemas
-│
-└─ frontend/
-   ├─ index.html         # UI
-   ├─ style.css
-   └─ app.js
-
-🔧 Dataset & Processing
-
-This project does not use a traditional dataset.
-
-Instead, it performs real-time data extraction from GitHub:
-
-🟦 Fetches title / body of issue
-
-💬 Fetches comments
-
-🧹 Prepares a structured prompt
-
-🧠 Sends to LLM for reasoning
-
-📦 Formats output JSON
-
-🧠 AI Model Integration
-Flow:
-
-Frontend collects input
-
-Backend calls GitHub API
-
-Data cleaned and merged
-
-AI model (Gemini/GPT) analyzes issue
-
-Returns clean JSON response
-
-Example Output:
-
-{
-  "summary": "Test isolation issue in React test environment",
-  "type": "feature_request",
-  "priority_score": "6 - Medium priority",
-  "suggested_labels": ["testing", "isolation"],
-  "potential_impact": "Improves test consistency across environments"
-}
-
-🚀 Installation & Setup
-1️⃣ Clone the Repository
-git clone https://github.com/YOUR_USERNAME/GitHub-Issue-Assistant.git
-cd GitHub-Issue-Assistant
-
-2️⃣ Backend Setup (FastAPI)
-Create venv
-python -m venv venv
-source venv/bin/activate      # macOS / Linux
-venv\Scripts\activate         # Windows
-
-Install dependencies
+### 2️⃣ Backend Setup (Flask)
+```bash
+cd backend
 pip install -r requirements.txt
+python app.py
+```
 
-Set environment variable
-export GOOGLE_API_KEY="YOUR_KEY"
+### 3️⃣ Frontend Setup (React.js)
+```bash
+cd frontend
+npm install
+npm start
+```
 
-Run server
-uvicorn main:app --reload
+---
 
-
-Access API at:
-
-http://127.0.0.1:8000/docs
-
-3️⃣ Frontend Setup
-
-Simply open:
-
-frontend/index.html
+## Screenshots
+### 🌍 Home Page
+![image](https://github.com/user-attachments/assets/861a27d4-d90f-43a8-bbd3-2b12ffe09f1e)
 
 
-Or run via VS Code Live Server.
+### 📊 Disaster Prediction Dashboard
+![image](https://github.com/user-attachments/assets/a8daa3d8-a3dc-4baa-b1f8-add871af6064)
 
-📸 Screenshots
-🏠 Home UI
 
-🧠 AI Result View
+### 🔍 Prediction Results
+![image](https://github.com/user-attachments/assets/7ff154e4-53e5-4e37-b839-58966c2d08b6)
 
-📦 JSON Output
+---
 
-🧭 Usage
+## Usage
+- **Enter relevant disaster data** (location, weather conditions, etc.) in the web app.
+- **The ML model predicts the probability** of a disaster occurring.
+- **Results are displayed visually** with recommendations (if applicable).
 
-Paste GitHub repo URL
+---
 
-Enter Issue number
+## Future Enhancements
+- 📌 Integrate **real-time data sources** for live predictions.
+- 🛰️ Use **satellite imagery** for forest fire detection.
+- 🌍 Develop a **mobile app** for accessibility.
 
-Click Analyze
+---
 
-Get instant JSON report
+## Contributing
+Contributions are welcome! Feel free to fork the repo, create a new branch, and submit a pull request.
 
-🔮 Future Enhancements
-
-🔁 Analyze multiple issues at once
-
-🏷️ Auto-apply labels using GitHub API
-
-📊 Integrate priority scoring model
-
-🌐 Host backend on cloud (Render/AWS)
-
-📱 Add mobile responsive UI
-
-🤝 Integrate with GitHub Actions
-
-🧠 Fine-tuned custom model
-
-🤝 Contributing
-
-Open-source contributions are welcome.
-Feel free to:
-
-Fork the repo
-
-Improve UI/backend
-
-Add features
-
-Submit PRs
-
+---
