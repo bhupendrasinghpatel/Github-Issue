@@ -133,14 +133,14 @@ Or run using Live Server in VS Code.
 ## 🖥️ Screenshots
 
 ### 🌐 Input Form
-(Enter repo URL & issue number)
 
-*Add your screenshots here*
+
+<img width="1915" height="887" alt="image" src="https://github.com/user-attachments/assets/49d675d0-486a-40a1-87be-3c834e0517a9" />
+
 
 ### 📦 JSON Output
-(Clean structured analysis)
+<img width="1892" height="810" alt="image" src="https://github.com/user-attachments/assets/f43cec7c-dc9e-472c-a913-c9a3d4bc7133" />
 
-*Add your screenshots here*
 
 ## ▶️ Usage
 
