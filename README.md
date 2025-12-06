@@ -1,99 +1,180 @@
-# Disaster Prediction using ML 🌍🔍
+# 🐙 GitHub Issue Assistant 🔍🤖
 
-## Overview
-This project aims to predict natural disasters such as **earthquakes, floods, and forest fires** using **Machine Learning**. It features a **clean and intuitive UI** built with **React.js & Tailwind CSS**, while the backend is powered by **Flask** for efficient data processing and predictions.
+## 🌟 Overview
 
-## Features
-- 📊 **Predicts earthquakes, floods, and forest fires** based on historical data.
-- 🛠️ **Machine Learning models** trained using various datasets.
-- 🌐 **Interactive web application** with an intuitive UI.
-- 🔥 **Built with React.js, Tailwind CSS (Frontend) & Flask (Backend).**
+The GitHub Issue Assistant is an AI-driven tool designed to analyze GitHub issues and generate structured insights that help developers and maintainers quickly understand issue context, priority, and impact.
 
----
+Just provide a GitHub repository URL and an issue number, and the system will analyze the issue using LLM intelligence (Gemini) and return a clean JSON output with:
 
-## Tech Stack
-- **Frontend**: React.js, Tailwind CSS
-- **Backend**: Flask, Python
-- **ML Libraries**: Pandas, NumPy, Scikit-Learn
-- **Data Visualization**: Matplotlib, Seaborn
+- 🎯 Issue summary
+- 🏷️ Suggested labels
+- 🧭 Issue type classification
+- 📌 Priority score
+- ⚠️ Potential user impact
 
----
+The project includes a simple UI built using HTML, CSS & JavaScript, and a FastAPI backend for data processing and AI calls.
 
-## Dataset & Preprocessing
-The dataset is collected from multiple sources, containing data on past disasters. The preprocessing steps include:
-1. **Exploratory Data Analysis (EDA)**
-   - Handling missing values
-   - Feature engineering
-   - Data visualization
-2. **Data Cleaning & Transformation**
-   - Normalization & scaling
-   - Encoding categorical variables
-3. **Model Training & Evaluation**
-   - Splitting dataset into training & testing
-   - Training ML models (Logistic Regression, Random Forest, Neural Networks, etc.)
-   - Evaluating model performance using accuracy, precision, recall, and F1-score
+## 🚀 Features
 
----
+- 🐙 Analyze issues from any public GitHub repository
+- 🧠 AI-powered natural language understanding
+- 🏷️ Suggested labels based on issue context
+- 📊 Priority scoring
+- ⚡ Fast API backend using FastAPI
+- 🌐 Clean web UI to interact with the API
+- 📦 Returns JSON formatted response for automation
 
-## Model Integration
-Once the model is trained and tested, it is integrated into a Flask API to serve predictions to the web application.
-- The **Flask API** receives input data, processes it, and returns predictions.
-- The **React.js frontend** consumes the API and displays the results in an interactive manner.
+## 🛠️ Tech Stack
 
----
+### 🎨 Frontend
+- HTML5
+- CSS3
+- JavaScript
 
-## Installation & Setup
+### ⚙️ Backend
+- FastAPI (Python)
+- Pydantic for validation
+
+### 🤖 AI Engine
+- Google Gemini LLM
+
+### 🔗 External APIs
+- GitHub REST API
+
+> **Note:** No database is required — all data is fetched live from GitHub during analysis.
+
+## 📂 Architecture
+
+### 🔧 Workflow
+
+1. User input → GitHub URL + Issue number
+2. Backend fetches issue details from GitHub API
+3. LLM analyzes:
+   - Title
+   - Issue description
+   - Comments
+4. AI Response → Clean JSON with insights
+5. Frontend displays the result neatly
+
+## 🔍 Expected Output
+
+Example JSON:
+
+```json
+{
+  "summary": "Tests fail due to module caching issue in PhantomJS.",
+  "type": "bug",
+  "priority_score": "3 - Medium priority, impacts core testing flow.",
+  "suggested_labels": ["testing", "cache", "phantomjs"],
+  "potential_impact": "Users face unreliable test results on core modules."
+}
+```
+
+## 🧠 AI Prompt Strategy
+
+The system sends a structured prompt to the LLM divided into:
+
+1. Issue Title
+2. Issue Description
+3. Issue Comments
+
+Then requests a strict JSON output without extra text to ensure reliability.
+
+## ⚙️ Installation & Setup
+
 ### 1️⃣ Clone the Repository
+
 ```bash
-git clone https://github.com/Abhishek142004/Disaster-Prediction-ML-Project.git
-cd Disaster-Prediction-ML-Project
+git clone https://github.com/YOUR_USERNAME/GitHub-Issue-Assistant.git
+cd GitHub-Issue-Assistant
 ```
 
-### 2️⃣ Backend Setup (Flask)
+### 2️⃣ Backend Setup (FastAPI)
+
+Create and activate virtual environment:
+
 ```bash
-cd backend
+python -m venv venv
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Mac/Linux
+```
+
+Install requirements:
+
+```bash
 pip install -r requirements.txt
-python app.py
 ```
 
-### 3️⃣ Frontend Setup (React.js)
+Set your Google Gemini API key:
+
 ```bash
-cd frontend
-npm install
-npm start
+export GOOGLE_API_KEY="YOUR_KEY"
 ```
 
+Run server:
+
+```bash
+uvicorn main:app --reload
+```
+
+The API docs will be available at:  
+👉 http://localhost:8000/docs
+
+### 3️⃣ Frontend Setup (HTML + JS)
+
+Simply open:
+
+```bash
+frontend/index.html
+```
+
+Or run using Live Server in VS Code.
+
+## 🖥️ Screenshots
+
+### 🌐 Input Form
+(Enter repo URL & issue number)
+
+*Add your screenshots here*
+
+### 📦 JSON Output
+(Clean structured analysis)
+
+*Add your screenshots here*
+
+## ▶️ Usage
+
+1. Enter GitHub repo URL e.g. `https://github.com/facebook/react`
+2. Enter Issue number e.g. `12345`
+3. Click **Analyze**
+4. View AI-generated JSON output
+5. You can copy or download the output for automation
+
+## 🌱 Future Enhancements
+
+- 🚀 Multi-issue batch analysis
+- 🤝 Auto-label using GitHub API
+- 💬 Add comments summarization
+- 🔄 GitHub Actions integration
+- 📱 Responsive UI
+- 📊 Impact scoring using historical project patterns
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repo, create a branch, make improvements, and submit a pull request.
+
+## 🙌 Acknowledgements
+
+Thanks to:
+
+- GitHub REST API
+- Google Gemini
+- FastAPI Community
+
+## ⭐ Support
+
+If you like this project, star the repository ⭐ and share with developers!
+
 ---
 
-## Screenshots
-### 🌍 Home Page
-![image](https://github.com/user-attachments/assets/861a27d4-d90f-43a8-bbd3-2b12ffe09f1e)
-
-
-### 📊 Disaster Prediction Dashboard
-![image](https://github.com/user-attachments/assets/a8daa3d8-a3dc-4baa-b1f8-add871af6064)
-
-
-### 🔍 Prediction Results
-![image](https://github.com/user-attachments/assets/7ff154e4-53e5-4e37-b839-58966c2d08b6)
-
----
-
-## Usage
-- **Enter relevant disaster data** (location, weather conditions, etc.) in the web app.
-- **The ML model predicts the probability** of a disaster occurring.
-- **Results are displayed visually** with recommendations (if applicable).
-
----
-
-## Future Enhancements
-- 📌 Integrate **real-time data sources** for live predictions.
-- 🛰️ Use **satellite imagery** for forest fire detection.
-- 🌍 Develop a **mobile app** for accessibility.
-
----
-
-## Contributing
-Contributions are welcome! Feel free to fork the repo, create a new branch, and submit a pull request.
-
----
+**Made with ❤️ by developers, for developers**
